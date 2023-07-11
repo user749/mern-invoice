@@ -1,6 +1,6 @@
 ARG NODE_VERSION=16-alpine3.12
 
-FROM node:${NODE_VERSION}}
+FROM node:${NODE_VERSION}
 
 ARG APP_HOME=/app
 
