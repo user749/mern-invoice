@@ -2,7 +2,7 @@ import chalk from "chalk";
 import mongoose from "mongoose";
 import { systemLogs } from "../utils/Logger.js";
 
-const connectionDB = async () => {
+const connectionToDB = async () => {
   try {
     const connectionParams = {
       dbName: process.env.DB_NAME,
@@ -12,15 +12,13 @@ const connectionDB = async () => {
       connectionParams
     );
     console.log(
-      `${chalk.blue.bold(`MongoDB connected: ${connect.connection.host}`)}`
+      `${chalk.blue.bold(`MongoDB Connected: ${connect.connection.host}`)}`
     );
-    systemLogs.info(
-      `${chalk.blue.bold(`MongoDB connected: ${connect.connection.host}`)}`
-    );
+    systemLogs.info(`MongoDB Connected: ${connect.connection.host}`);
   } catch (error) {
     console.error(`${chalk.red.bold(`Error: ${error.message}`)}`);
     process.exit(1);
   }
 };
 
-export default connectionDB;
+export default connectionToDB;
